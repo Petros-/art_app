@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= image_tag @artwork.image.url(:medium) %>
+<p>
+  <strong>Title:</strong>
+  <%= @artwork.title %>
+</p>
+
+<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+<%= link_to 'Back', artworks_path %>
