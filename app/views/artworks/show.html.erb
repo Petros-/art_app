@@ -2,10 +2,21 @@
 
 
 <%= image_tag @artwork.image.url(:medium) %>
-<p>
-  <strong>Title:</strong>
-  <%= @artwork.title %>
-</p>
+
+  <p>Title:</p>
+  <h3><%= @artwork.title %></h3>
+
+<p>Genre</p>
+<h3><%= @artwork.genre %></h3>
+
+
+<p>Category</p>
+<h3><%= @artwork.category %></h3>
+
+
+<p>Medium</p>
+<h3><%= @artwork.medium %></h3>
+
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+<%= link_to 'Artworks Table', artworks_path %>
