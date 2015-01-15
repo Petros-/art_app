@@ -1,21 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
 
-<%= image_tag @artwork.image.url(:medium) %>
+	<div class="col-md-8">
+  	<%= image_tag @artwork.image.url %>
+  </div>
 
-  <p>Title:</p>
-  <h3><%= @artwork.title %></h3>
+  <div class="col-md-4">
+  	<p class="field-label">Title</p>
+  	<h1><%= @artwork.title %></h1>
+  </div>	
+  	<div class="col-md-2">
+  		<p class="field-label">Genre</p>
+  		<h3><%= @artwork.genre %></h3>
+  	</div>
+  	<div class="col-md-2">
+  		<p class="field-label">Category</p>
+  		<h3><%= @artwork.category %></h3>
+  	</div>
+  <div class="col-md-4">
+  	<p class="field-label">Medium</p>
+  	<h3><%= @artwork.medium %></h3>
+  </div>
 
-<p>Genre</p>
-<h3><%= @artwork.genre %></h3>
+</div>
 
 
-<p>Category</p>
-<h3><%= @artwork.category %></h3>
 
-
-<p>Medium</p>
-<h3><%= @artwork.medium %></h3>
+  
 
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
