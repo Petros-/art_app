@@ -6,10 +6,11 @@ $font-size-base: 16px;
 $border-radius-base: 2px;
 $border-radius-large: 2px;
 
-h1 {border: 1px solid blue; padding: 0px; font-weight: 700; font-style: italic;}
-h3 {border: 1px solid green; padding: 0px; margin: 0; }
-.brand-text {font-family: 'Alegreya'; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;}
-.field-label {border: 1px solid red; padding: 0px; margin: 0px; text-transform: uppercase; letter-spacing: 4px; font-size: 14px;}
+
+h1 {font-weight: 700; font-style: italic; line-height: 90% !important;}
+h1, h3 { margin:4px 0px 24px 0px !important; }
+.brand-text {font-family: 'Alegreya'; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;}
+.field-label { margin-bottom: -6px; text-transform: uppercase; letter-spacing: 3px; font-size: 14px;}
 
 
 
