@@ -10,20 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <%= f.input :image %>
-  <%= f.input :title %>
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :genre, :collection => ['Landscape', 'Still life', 'Figure', 'Interior'], :include_blank => false, :as => :radio_buttons, :checked => 'Landscape' %>
+    <%= f.input :image %>
+      </div>
+    <div class="col-md-8">
+      <%= f.input :title %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :genre, :collection => ['Landscape', 'Still life', 'Figure', 'Interior'], :include_blank => false, :as => :radio_buttons %>
     </div>
 
     <div class="col-md-4">
-      <%= f.input :category, :collection => ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'], :include_blank => false, :as => :radio_buttons, :checked => 'Painting' %>
+      <%= f.input :category, :collection => ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'], :include_blank => false, :as => :radio_buttons, %>
     </div>
 
     <div class="col-md-4">
-      <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite'], :include_blank => false, :as => :radio_buttons, :checked => 'Oil on paper' %>
+      <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite'], :include_blank => false, :as => :radio_buttons %>
     </div>
   </div>
 
