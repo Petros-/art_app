@@ -10,6 +10,10 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.json
   def show
+    @artwork = Artwork.friendly.find(params[:id])
+    if request.path != artwork_path(@artwork)
+      redirect_to @artwork, status: :moved_permanently
+    end
   end
 
   # GET /artworks/new
@@ -64,11 +68,11 @@ class ArtworksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artwork
-      @artwork = Artwork.find(params[:id])
+      @artwork = Artwork.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:title, :image, :genre, :category, :medium)
+      params.require(:artwork).permit(:title, :image, :genre, :category, :medium, :slug)
     end
 end

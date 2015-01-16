@@ -1,4 +1,4 @@
-<%= form_for @artwork, :html => {:multipart => true } do |f| %>
+<%= simple_form_for @artwork, :html => {:multipart => true } do |f| %>
   <% if @artwork.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@artwork.errors.count, "error") %> prohibited this artwork from being saved:</h2>
@@ -11,6 +11,24 @@
     </div>
   <% end %>
 
+  <%= f.input :image %>
+  <%= f.input :title %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :genre, :collection => ['Landscape', 'Still life', 'Figure', 'Interior'], :include_blank => false, :as => :radio_buttons, :checked => 'Landscape' %>
+    </div>
+
+    <div class="col-md-4">
+      <%= f.input :category, :collection => ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'], :include_blank => false, :as => :radio_buttons, :checked => 'Painting' %>
+    </div>
+
+    <div class="col-md-4">
+      <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite'], :include_blank => false, :as => :radio_buttons, :checked => 'Oil on paper' %>
+    </div>
+  </div>
+
+  <%= f.button :submit %>
+<!--
   <div class="form-group">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
@@ -23,20 +41,20 @@
 
   <div class="form-group">
     <%= f.label :genre %><br>
-    <%= f.text_field :genre, :placeholder => 'Landscape'%>
+    <%= f.select :genre, ['Landscape', 'Still life', 'Figure', 'Interior'] %>
   </div>
 
   <div class="form-group">
     <%= f.label :category %><br>
-    <%= f.text_field :category, :placeholder => 'Painting' %>
+    <%= f.select :category, ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'] %>
   </div>
 
   <div class="form-group">
     <%= f.label :medium %><br>
-    <%= f.text_field :medium, :placeholder => 'Oil on canvas'%>
+    <%= f.select :medium, ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite'] %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div> -->
 <% end %>
