@@ -11,4 +11,12 @@ class Artwork < ActiveRecord::Base
       [:title, :genre, :category, :medium]
     ]
   end
+
+  def previous
+    Artwork.where(["id < ?", id]).order('id').last
+  end
+
+  def next
+    Artwork.where(["id > ?", id]).first
+  end
 end

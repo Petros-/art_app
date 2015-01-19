@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -21,6 +23,20 @@
 	<div class="col-md-2">
 		<p class="field-label">Category</p>
 		<h3><%= @artwork.category %></h3>
+	</div>
+
+	<div class="col-md-2">
+		<p class="field-label">Date</p>
+		<h3><%= @artwork.date %></h3>
+	</div>
+	<div class="col-md-2">
+		<p class="field-label">Size</p>
+		<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
+
+	</div>
+	<div class="btn-group" role="group" aria-label="...">
+	  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
+	  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
 	</div>
 	
 </div>
