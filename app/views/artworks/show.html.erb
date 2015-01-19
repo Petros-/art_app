@@ -11,7 +11,6 @@
   <div class="col-md-4">
   	<p class="field-label">Title</p>
   	<h1><%= @artwork.title %></h1>
-
   	<p class="field-label">Medium</p>
   	<h3><%= @artwork.medium %></h3>
   </div>
@@ -32,14 +31,21 @@
 	<div class="col-md-2">
 		<p class="field-label">Size</p>
 		<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
-
 	</div>
-	<div class="btn-group" role="group" aria-label="...">
-	  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
-	  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
+
+	<div class="col-md-2">
+		<p class="field-label">Availability</p>
+		<h3><%= @artwork.availability %></h3>
+	</div>
+
+	<div class="col-md-4">
+		<div class="btn-group" role="group" aria-label="...">
+		  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
+		  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
+		</div>
 	</div>
 	
-</div>
+</div> <!-- end of 'row' div -->
 
 
 

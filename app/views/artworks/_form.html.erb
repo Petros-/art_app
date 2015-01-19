@@ -29,26 +29,36 @@
     </div>
 
     <div class="col-md-4">
-      <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite', 'Oil pastel'], :include_blank => false, :as => :radio_buttons %>
+      <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite', 'Oil pastel'] %>
     </div>
-
-    <div class="row">
-      <div class="col-md-4">
-        <%= f.input :date, :include_blank => true, as: :string, start_year: Time.now.year - 100, end_year: Time.now.year, order: [:month, :day, :year] %>
-      </div>
-      <div class="col-md-4">
-        <%= f.input :height %>
-        <%= f.input :width %>
-      </div>
-      <div class="col-md-4">
-        <%= f.input :availability, :collection => ['Available for purchase','Private collection','Not for sale'],  :as => :radio_buttons %>
-      </div>
-    </div>
-
- 
   </div>
 
-  <%= f.button :submit %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.input :date, :include_blank => true, as: :string, start_year: Time.now.year - 100, end_year: Time.now.year, order: [:month, :day, :year] %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :height %>
+      <%= f.input :width %>
+    </div>
+    <div class="col-md-4">
+      <%= f.input :availability, :collection => ['Available for purchase','Private collection','Not for sale'],  :as => :radio_buttons %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :notes %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 col-md-offset-10">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  
 <!--
   <div class="form-group">
     <%= f.label :image %><br>

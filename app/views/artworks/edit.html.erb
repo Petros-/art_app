@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @artwork %> |
+<%= link_to 'See detail page', @artwork %> |
+<%= link_to 'Delete this artwork', method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Artworks Table', artworks_path %>
