@@ -1,18 +1,25 @@
 
-@import url(http://fonts.googleapis.com/css?family=Alegreya:700italic,400,900);
+@import url(http://fonts.googleapis.com/css?family=Alegreya:700italic,400,700);
 
 $font-family-base: 'Alegreya', Georgia, serif !default;
 $font-size-base: 16px;
 $border-radius-base: 2px;
 $border-radius-large: 2px;
 $font-size-h3: $font-size-base * 1.5;
+$body-bg: #fbfbfb;
+$brand-primary: #0368bd;
+$navbar-height: 80px;
+$navbar-default-color: #333;
+$navbar-margin-bottom: -13px;
+$navbar-default-border: 0px;
+$btn-default-color: $brand-primary;
 
-
+.btn {padding: 20px 30px !important;}
 h1 {font-weight: 700; font-style: italic; line-height: 90% !important;}
 h1, h3 { margin:4px 0px 24px 0px !important; }
-.brand-text {font-family: 'Alegreya'; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;}
+.brand-text {font-family: 'Alegreya'; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: $brand-primary !important;}
 .field-label { margin-bottom: -6px; text-transform: uppercase; letter-spacing: 3px; font-size: $font-size-base * .75 !important;}
-
+.navbar {background:transparent !important;}
 
 
 
