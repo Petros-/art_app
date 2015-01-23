@@ -1,4 +1,4 @@
-<%- title "#{@artwork.title}" + " — Peter Bentley"%>
+<%- title "#{@artwork.title} — a #{@artwork.category.downcase} by Peter Bentley"%>
 
 <p id="notice"><%= notice %></p>
 
@@ -14,15 +14,20 @@
   	<p class="field-label">Medium</p>
   	<h3><%= @artwork.medium %></h3>
   </div>
-  
-	<div class="col-md-2">
-		<p class="field-label">Date</p>
-		<h3><%= @artwork.date %></h3>
-	</div>
-	<div class="col-md-2">
-		<p class="field-label">Size</p>
-		<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
-	</div>
+
+  <% unless @artwork.date.blank? %>	
+		<div class="col-md-2">
+			<p class="field-label">Date</p>
+			<h3><%= @artwork.date %></h3>
+		</div>
+	<% end %>
+
+	<% unless @artwork.height.blank? | @artwork.width.blank?%>	
+		<div class="col-md-4">
+			<p class="field-label">Size</p>
+			<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
+		</div>
+	<% end %>
 
   <div class="col-md-2">
 		<p class="field-label">Genre</p>
@@ -33,10 +38,18 @@
 		<h3><%= @artwork.category %></h3>
 	</div>
 
-	<div class="col-md-2">
-		<p class="field-label">Availability</p>
-		<h3><%= @artwork.availability %></h3>
-	</div>
+	<% unless @artwork.availability.blank? %>	
+		<div class="col-md-4">
+			<% if @artwork.availability == 'Available for purchase' %>
+				<p class="field-label">Availability</p>
+				<h3><%= @artwork.availability %></h3>
+				<%= link_to "Add to Inquiry List", root_path, class: "btn btn-primary" %>
+			<% else %>
+				<p class="field-label">Availability</p>
+				<h3><%= @artwork.availability %></h3>				
+			<% end %>
+		</div>
+	<% end %>
 
 	<div class="col-md-4">
 		<div class="btn-group" role="group" aria-label="...">
