@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   root "pages#home"
 
+  get "artworks" => "artworks#index"
+  # post "artworks" => "artworks#index"
+
   resources :artworks, path: ''
 
   get "about" => "pages#about"
-  get "artworks" => "artworks#index"
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.

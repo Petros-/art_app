@@ -46,7 +46,7 @@ class ArtworksController < ApplicationController
   def update
     respond_to do |format|
       if @artwork.update(artwork_params)
-        format.html { redirect_to @artwork, notice: 'Artwork was successfully updated.' }
+        format.html { redirect_to @artworks, notice: 'Artwork was successfully updated.' }
         format.json { render :show, status: :ok, location: @artwork }
       else
         format.html { render :edit }

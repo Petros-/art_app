@@ -15,6 +15,7 @@ gem 'paperclip', '~> 4.0'
 gem 'simple_form'
 gem 'friendly_id', '~>5.1.0'
 gem 'masonry-rails', '~>0.2.0'
+gem 'date_time_precision', '~> 0.8.0'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

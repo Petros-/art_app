@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class="col-md-4">
-      <%= f.input :date, :include_blank => true, as: :string, start_year: Time.now.year - 100, end_year: Time.now.year, order: [:month, :day, :year] %>
+      <%= f.input :date, :include_blank => true, as: :string, start_year: Time.now.year - 100, end_year: Time.now.year, order: [ :year, :month, :day,], hint: 'Order: Year, month, date' %>
     </div>
     <div class="col-md-4">
       <%= f.input :height %>

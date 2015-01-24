@@ -8,38 +8,41 @@
   	<%= image_tag(@artwork.image.url, :class => 'img-responsive') %>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-xs-12 col-md-4">
   	<p class="field-label">Title</p>
   	<h1><%= @artwork.title %></h1>
+  </div>
+
+  <div class="col-xs-6 col-sm-3 col-md-4">
   	<p class="field-label">Medium</p>
   	<h3><%= @artwork.medium %></h3>
   </div>
 
   <% unless @artwork.date.blank? %>	
-		<div class="col-md-2">
+		<div class="col-xs-6 col-sm-3 col-md-2">
 			<p class="field-label">Date</p>
-			<h3><%= @artwork.date %></h3>
+			<h3><%= @artwork.date.strftime("%b %d %Y") %></h3>
 		</div>
 	<% end %>
 
 	<% unless @artwork.height.blank? | @artwork.width.blank?%>	
-		<div class="col-md-4">
+		<div class="col-xs-6 col-sm-3 col-md-4">
 			<p class="field-label">Size</p>
 			<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
 		</div>
 	<% end %>
 
-  <div class="col-md-2">
+  <div class="col-xs-6 col-sm-3 col-md-2">
 		<p class="field-label">Genre</p>
 		<h3><%= @artwork.genre %></h3>
 	</div>
-	<div class="col-md-2">
+	<div class="col-xs-6 col-sm-3 col-md-2">
 		<p class="field-label">Category</p>
 		<h3><%= @artwork.category %></h3>
 	</div>
 
 	<% unless @artwork.availability.blank? %>	
-		<div class="col-md-4">
+		<div class="col-xs-12 col-sm-3 col-md-4">
 			<% if @artwork.availability == 'Available for purchase' %>
 				<p class="field-label">Availability</p>
 				<h3><%= @artwork.availability %></h3>
@@ -51,7 +54,7 @@
 		</div>
 	<% end %>
 
-	<div class="col-md-4">
+	<div class="col-xs-12 col-md-4">
 		<div class="btn-group" role="group" aria-label="...">
 		  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
 		  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
@@ -64,6 +67,9 @@
 
   
 
+<div class="row">
+	<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+	<%= link_to 'Artworks Table', artworks_path %> |
+	<%= link_to 'Add New Artwork', new_artwork_path %>
+</div>
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Artworks Table', artworks_path %>

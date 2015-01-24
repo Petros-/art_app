@@ -1,5 +1,13 @@
 
-  <h1>Listing artworks</h1>
+  <div class="row">
+    <div class="col-xs-6 col-sm-8 col-md-4">
+      <h1>Listing artworks</h1>
+    </div>
+    <div class="col-xs-4 col-sm-2 col-md-2 col-md-offset-6">
+      <%= link_to 'New Artwork', new_artwork_path, class:"btn btn-default" %>
+    </div>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
@@ -38,4 +46,3 @@
 
 <br>
 
-<%= link_to 'New Artwork', new_artwork_path, class:"btn btn-primary btn-lg" %>
