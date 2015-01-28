@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119050327) do
+ActiveRecord::Schema.define(version: 20150126142601) do
 
   create_table "artworks", force: true do |t|
     t.string   "title"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150119050327) do
     t.float    "height"
     t.float    "width"
     t.text     "notes"
+    t.integer  "rating"
   end
 
   add_index "artworks", ["slug"], name: "index_artworks_on_slug"

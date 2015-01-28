@@ -54,15 +54,16 @@
 		</div>
 	<% end %>
 
-	<div class="col-xs-12 col-md-4">
+	
+	
+</div> <!-- end of 'row' div -->
+
+<div class="fixed-prev-next">
 		<div class="btn-group" role="group" aria-label="...">
 		  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
 		  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
 		</div>
 	</div>
-	
-</div> <!-- end of 'row' div -->
-
 
 
   

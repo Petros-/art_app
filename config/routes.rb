@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  root "pages#home"
 
-  get "artworks" => "artworks#index"
+  # get "artworks" => "artworks#index"
   # post "artworks" => "artworks#index"
 
-  resources :artworks, path: ''
-
+  root to: "pages#home"
   get "about" => "pages#about"
-  
-  
+
+  resources :artworks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

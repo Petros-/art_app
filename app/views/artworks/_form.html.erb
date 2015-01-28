@@ -20,72 +20,39 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
       <%= f.input :genre, :collection => ['Landscape', 'Still life', 'Figure', 'Interior'], :include_blank => false, :as => :radio_buttons %>
     </div>
 
-    <div class="col-md-4">
-      <%= f.input :category, :collection => ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'], :include_blank => false, :as => :radio_buttons %>
+    <div class="col-md-2">
+      <%= f.input :category, :collection => ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'], :include_blank => false, :as => :radio_buttons %> 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <%= f.input :medium, :collection => ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite', 'Oil pastel'] %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
       <%= f.input :date, :include_blank => true, as: :string, start_year: Time.now.year - 100, end_year: Time.now.year, order: [ :year, :month, :day,], hint: 'Order: Year, month, date' %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
       <%= f.input :height %>
       <%= f.input :width %>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <%= f.input :availability, :collection => ['Available for purchase','Private collection','Not for sale'],  :as => :radio_buttons %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-5">
+      <%= f.input :rating, :collection => 1..10, :as => :radio_buttons, hint: '1 is least, 10 is best', item_wrapper_class: 'inline' %>
+    </div>
+  
+    <div class="col-md-4">
       <%= f.input :notes %>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 col-md-offset-10">
+   
+    <div class="col-md-3">
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>
   </div>
 
-  
-<!--
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :genre %><br>
-    <%= f.select :genre, ['Landscape', 'Still life', 'Figure', 'Interior'] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :category %><br>
-    <%= f.select :category, ['Painting', 'Drawing', 'Sculpture', 'Print', 'Mixed media'] %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :medium %><br>
-    <%= f.select :medium, ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Watercolor', 'Ink wash', 'Charcoal', 'Graphite'] %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div> -->
 <% end %>

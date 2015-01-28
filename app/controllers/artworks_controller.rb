@@ -46,7 +46,7 @@ class ArtworksController < ApplicationController
   def update
     respond_to do |format|
       if @artwork.update(artwork_params)
-        format.html { redirect_to @artworks, notice: 'Artwork was successfully updated.' }
+        format.html { redirect_to @artwork, notice: 'Artwork was successfully updated.' }
         format.json { render :show, status: :ok, location: @artwork }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork.destroy
     respond_to do |format|
-      format.html { redirect_to artworks_url, notice: 'Artwork was successfully destroyed.' }
+      format.html { redirect_to @artwork, notice: 'Artwork was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:title, :image, :genre, :category, :medium, :slug, :availability, :date, :height, :width)
+      params.require(:artwork).permit(:title, :category, :image, :genre, :medium, :slug, :availability, :date, :height, :width)
     end
 end

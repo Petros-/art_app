@@ -20,7 +20,6 @@ h1, h3 { margin:4px 0px 24px 0px !important; }
 .brand-text {font-family: 'Alegreya'; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: $brand-primary !important;}
 .field-label { margin-bottom: -6px; text-transform: uppercase; letter-spacing: 3px; font-size: $font-size-base * .75 !important;}
 .navbar {background:transparent !important;}
-
-
+.fixed-prev-next {position: fixed; bottom:40px; right:40px;}
 
 @import 'bootstrap';
