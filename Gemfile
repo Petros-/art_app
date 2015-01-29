@@ -16,6 +16,7 @@ gem 'friendly_id', '~>5.1.0'
 gem 'masonry-rails', '~>0.2.0'
 gem 'date_time_precision', '~> 0.8.0'
 gem 'devise'
+gem 'aws-sdk', '~> 1.20.0'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 

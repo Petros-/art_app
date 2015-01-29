@@ -1,0 +1,16 @@
+<!-- this was an attempt to create an approvals page to approve user signups. -->	
+
+<h1> Users </h1>
+
+<%= link_to "All Users", :action => "index" %> |
+<%= link_to "Users awaiting approval", :action => "index", :approved => "false" %>
+
+<% @users.each do |user| %>
+   <div>
+   		<ul>
+	      <li><%= user.email %></li>
+	      <li><%= user.approved %></li>
+	      <li><%= link_to "Edit", edit_user_path(user) %></li>
+      </ul>
+    </div>
+<% end %>

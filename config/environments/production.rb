@@ -78,4 +78,14 @@ Rails.application.configure do
 
   # this is for devise, update it when the url is redirected (I think)
   config.action_mailer.default_url_options = { :host => 'https://stark-beyond-5912.herokuapp.com/' }
+
+  # this is for paperclip image storage on Amazon S3
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
 end

@@ -6,8 +6,12 @@ Rails.application.routes.draw do
 
   root "pages#home"
   get "about" => "pages#about"
+  #get "users" => "users#index"
 
   resources :artworks
+
+  # following http://stackoverflow.com/questions/15329041/browser-based-new-user-approval-by-admin-in-rails-3-2-app-using-devise
+  #match 'users/:id/approve'=> 'users#approve_user', as: 'approve_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
