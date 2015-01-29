@@ -42,8 +42,14 @@
   </div>
 
   <div class="row">
-    <div class="col-md-5">
-      <%= f.input :rating, :collection => 1..10, :as => :radio_buttons, hint: '1 is least, 10 is best' %>
+    <div class="col-md-8">
+      <div class="form-inline">
+        <%= f.input :rating,
+        collection: 1..10,
+        as: :radio_buttons,
+        hint: '1 is least, 10 is best',
+        item_wrapper_class: 'inline' %>
+      </div>
     </div>
   
     <div class="col-md-4">
