@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   # get "artworks" => "artworks#index"
   # post "artworks" => "artworks#index"
 
-  root to: "pages#home"
+  root "pages#home"
   get "about" => "pages#about"
 
   resources :artworks
