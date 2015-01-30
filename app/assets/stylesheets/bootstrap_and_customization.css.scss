@@ -1,11 +1,15 @@
 
-@import url(https://fonts.googleapis.com/css?family=Alegreya:700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,200italic);
 
-$font-family-base: 'Alegreya', Georgia, serif !default;
+$font-family-base: 'Source Sans Pro', Helvetica Neue, Helvetica, sans-serif !default;
 $font-size-base: 16px;
+$line-height-base: 1.5;
 $border-radius-base: 2px;
 $border-radius-large: 2px;
+$font-size-h2: $font-size-base * 1.75;
 $font-size-h3: $font-size-base * 1.5;
+$font-size-h4: $font-size-base * 1.25;
+$headings-line-height: 1;
 $body-bg: #fbfbfb;
 $brand-primary: #0368bd;
 $navbar-height: 80px;
@@ -14,11 +18,13 @@ $navbar-margin-bottom: -10px;
 $navbar-default-border: 0px;
 $btn-default-color: $brand-primary;
 
+/* Testing for the baseline grid 
+body {background-image: url("Grid.png"); background-repeat: repeat; } */
+
 .btn {padding: 20px 30px !important;}
-h1 {font-weight: 700; font-style: italic; line-height: 90% !important;}
-h1, h3 { margin:4px 0px 24px 0px !important; }
-.brand-text {font-family: 'Alegreya'; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: $brand-primary !important;}
-.field-label { margin-bottom: -6px; text-transform: uppercase; letter-spacing: 3px; font-size: $font-size-base * .75 !important;}
+h1 {font-weight: 200italic; font-style: italic !important;}
+h1, h3 { margin:4px 0px 16px 0px !important; }
+.field-label { margin-bottom: -4px; text-transform: uppercase; letter-spacing: 3px; font-size: $font-size-base * .75 !important;}
 .navbar {background:transparent !important;}
 .fixed-prev-next {position: fixed; bottom:40px; right:40px;}
 
