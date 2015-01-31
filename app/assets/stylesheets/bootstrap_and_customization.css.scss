@@ -29,5 +29,17 @@ h1, h3 { margin:4px 0px 16px 0px !important; }
 .fixed-prev-next {position: fixed; bottom:40px; right:40px;}
 
 .inline {padding: 10px !important;}
+.tags a {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 62.5% !important;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 8px 0px -3px 0px;
+    padding: 6px 8px 7px 8px;
+    zoom: 1;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
 
 @import 'bootstrap';

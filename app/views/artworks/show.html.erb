@@ -63,10 +63,12 @@
 
 	
 		<h3><% @artwork.tags.any? %>
-			<div class="col-xs-6 col-sm-3 col-md-2">
+			<div class="col-xs-6 col-sm-6 col-md-4">
 				<p class="field-label">Tags</p>
 				<% @artwork.tags.each do |tag| %>
-				<%= link_to tag.name, tagged_url(:tag => tag.name) %>
+				<span class="tags">
+					<%= link_to tag.name, tagged_url(:tag => tag.name) %>
+				</span>
 			<% end %>
 		</h3>
 	</div>
