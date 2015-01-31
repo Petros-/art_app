@@ -21,6 +21,7 @@
           <th>Dimensions</th>
           <th>Availability</th>
           <th>Rating</th>
+          <th>Tags</th>
           <th>Edit</th>
         </tr>
       </thead>
@@ -37,6 +38,7 @@
             <td><%= artwork.height %> x <%= artwork.width %></td>
             <td><%= artwork.availability %> </td>
             <td><%= artwork.rating %> </td>
+            <td><%= artwork.tag_list %> </td>
             <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
             <td></td>
           </tr>

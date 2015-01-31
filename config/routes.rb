@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'tagged' => 'artworks#index', :as => 'tagged'
+
   devise_for :users
   # get "artworks" => "artworks#index"
   # post "artworks" => "artworks#index"

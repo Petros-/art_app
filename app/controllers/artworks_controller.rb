@@ -3,8 +3,20 @@ class ArtworksController < ApplicationController
 
   # GET /artworks
   # GET /artworks.json
-  def index
-    @artworks = Artwork.all
+   def index
+    if params[:tag]
+      @artworks = Artwork.tagged_with(params[:tag])
+    else
+      @artworks = Artwork.all
+    end
+  end
+
+  def tagged
+    if params[:tag].present? 
+      @artworks = Artwork.tagged_with(params[:tag])
+    else 
+      @artworks = Artwork.all
+    end  
   end
 
   # GET /artworks/1
@@ -73,6 +85,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:title, :category, :image, :genre, :medium, :slug, :availability, :date, :height, :width, :rating)
+      params.require(:artwork).permit(:title, :category, :image, :genre, :medium, :slug, :availability, :date, :height, :width, :rating, :tag_list, :tag)
     end
 end
