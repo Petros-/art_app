@@ -3,14 +3,13 @@ Rails.application.routes.draw do
   get 'tagged' => 'artworks#index', :as => 'tagged'
 
   devise_for :users
-  # get "artworks" => "artworks#index"
-  # post "artworks" => "artworks#index"
 
-  root "pages#home"
+  root "artworks#index"
   get "about" => "pages#about"
+  get "admin" => "artworks#admin"
   #get "users" => "users#index"
 
-  resources :artworks
+  resources :artworks, path: ''
 
   # following http://stackoverflow.com/questions/15329041/browser-based-new-user-approval-by-admin-in-rails-3-2-app-using-devise
   #match 'users/:id/approve'=> 'users#approve_user', as: 'approve_user'

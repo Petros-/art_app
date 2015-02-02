@@ -1,14 +1,19 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :create, :update, :destroy, :admin]
 
   # GET /artworks
   # GET /artworks.json
-   def index
+  def index
     if params[:tag]
       @artworks = Artwork.tagged_with(params[:tag])
     else
       @artworks = Artwork.all
     end
+  end
+
+  def admin
+    @artworks = Artwork.all
   end
 
   def tagged

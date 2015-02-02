@@ -30,16 +30,18 @@ h1, h3 { margin:4px 0px 16px 0px !important; }
 
 .inline {padding: 10px !important;}
 .tags a {
+		color: #bbb !important;
+		font-weight: 400 !important;
     background-color: #fff;
     border: 1px solid #ccc;
-    font-size: 62.5% !important;
     display: inline-block;
     white-space: nowrap;
-    margin: 8px 0px -3px 0px;
-    padding: 6px 8px 7px 8px;
+    margin: 8px 0px -5px 0px;
+    padding: 6px 12px 7px 12px;
     zoom: 1;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
+.tags a:hover {background-color: $brand-primary; text-decoration: none;}
 
 @import 'bootstrap';
