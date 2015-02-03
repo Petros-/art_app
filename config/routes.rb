@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   get 'tagged' => 'artworks#index', :as => 'tagged'
 
-  devise_for :users
+  devise_for :users, :skip => :registrations
 
   root "artworks#index"
   get "about" => "pages#about"
   get "admin" => "artworks#admin"
-  #get "users" => "users#index"
 
   resources :artworks, path: ''
 
