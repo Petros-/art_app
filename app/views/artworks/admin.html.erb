@@ -1,12 +1,5 @@
 <% if current_user.admin? %> 
-  <div class="row">
-    <div class="col-xs-6 col-sm-8 col-md-4">
-      <h1>All Works</h1>
-    </div>
-    <div class="col-xs-4 col-sm-2 col-md-2 col-md-offset-6">
-      <%= link_to 'Add New Artwork', new_artwork_path, class:"btn btn-default" %>
-    </div>
-  </div>
+  <h2>All Works</h2>
 
   <div class="table-responsive">
     <table class="table table-striped">
