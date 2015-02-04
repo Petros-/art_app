@@ -12,16 +12,24 @@ class ArtworksController < ApplicationController
     end
   end
 
-  def admin
-    @artworks = Artwork.all
-  end
-
   def tagged
     if params[:tag].present? 
       @artworks = Artwork.tagged_with(params[:tag])
     else 
       @artworks = Artwork.all
     end  
+  end
+
+  def series
+    if params[:series].present? 
+      @artworks = Artwork.tagged_with(params[:series])
+    else 
+      @artworks = Artwork.all
+    end  
+  end
+
+  def admin
+    @artworks = Artwork.all
   end
 
   # GET /artworks/1
@@ -90,6 +98,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:title, :category, :image, :genre, :medium, :slug, :availability, :date, :height, :width, :rating, :tag_list, :tag)
+      params.require(:artwork).permit(:title, :category, :image, :genre, :medium, :slug, :availability, :date, :height, :width, :rating, :tag_list, :tag, :region, :series_list, :series)
     end
 end

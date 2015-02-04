@@ -5,7 +5,7 @@ class Artwork < ActiveRecord::Base
   #validates_presence_of :name, :category #to ensure that page titles have both of these
 
   acts_as_taggable
-  acts_as_taggable_on :tags
+  acts_as_taggable_on :tags, :series
 
   extend FriendlyId
   friendly_id :slug_candidates, use: [:slugged, :history]

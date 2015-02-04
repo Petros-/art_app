@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'series' => 'artworks#index', :as => 'series'
   get 'tagged' => 'artworks#index', :as => 'tagged'
 
   devise_for :users, :skip => :registrations
