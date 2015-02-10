@@ -20,7 +20,7 @@
   	<h1><%= @artwork.title %></h1>
   </div>
 
-  <div class="col-xs-6 col-sm-3 col-md-4">
+  <div class="col-xs-6 col-sm-3 col-md-2">
   	<p class="field-label">Medium</p>
   	<h3><%= @artwork.medium %></h3>
   </div>
@@ -33,20 +33,22 @@
 	<% end %>
 
 	<% unless @artwork.height.blank? | @artwork.width.blank?%>	
-		<div class="col-xs-6 col-sm-3 col-md-4">
+		<div class="col-xs-6 col-sm-3 col-md-2">
 			<p class="field-label">Size</p>
 			<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
 		</div>
 	<% end %>
 
-  <div class="col-xs-6 col-sm-3 col-md-2">
-		<p class="field-label">Genre</p>
-		<h3><%= @artwork.genre %></h3>
-	</div>
-	<div class="col-xs-6 col-sm-3 col-md-2">
-		<p class="field-label">Category</p>
-		<h3><%= @artwork.category %></h3>
-	</div>
+	<% unless @artwork.series.blank? %>
+	  <div class="col-xs-6 col-sm-6 col-md-4">
+	    <p class="field-label">Series</p>
+	    <% @artwork.series.each do |series| %>
+	      <span class="tags">
+	        <%= link_to series.name, series_url(:series => series.name) %>
+	      </span><br><br>
+	    <% end %>
+	  </div>
+	<% end %>
 
 	<% unless @artwork.availability.blank? %>	
 		<div class="col-xs-12 col-sm-3 col-md-4">
@@ -60,17 +62,19 @@
 			<% end %>
 		</div>
 	<% end %>
+	
+</div> <!-- end of first 'row' div -->
+<br>
+<div class="row">
 
-	<% unless @artwork.series.blank? %>
-	  <div class="col-xs-6 col-sm-6 col-md-4">
-	    <p class="field-label">Series</p>
-	    <% @artwork.series.each do |series| %>
-	      <span class="tags">
-	        <%= link_to series.name, series_url(:series => series.name) %>
-	      </span>
-	    <% end %>
-	  </div>
-	<% end %>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<p class="field-label">Genre</p>
+		<h3><%= @artwork.genre %></h3>
+	</div>
+	<div class="col-xs-6 col-sm-3 col-md-2">
+		<p class="field-label">Category</p>
+		<h3><%= @artwork.category %></h3>
+	</div>
 
 	<% unless @artwork.tags.blank? %>
 	  <div class="col-xs-6 col-sm-6 col-md-4">
@@ -83,8 +87,14 @@
 	  </div>
 	<% end %>
 
+	<% unless @artwork.region.blank? %>	
+		<div class="col-xs-6 col-sm-3 col-md-2">
+			<p class="field-label">Region</p>
+			<h3><%= @artwork.region %></h3>
+		</div>
+	<% end %>
 
-</div> <!-- end of 'row' div -->
+</div> <!-- end of second 'row' div -->
 
 <div class="fixed-prev-next">
 	<div class="btn-group" role="group" aria-label="...">

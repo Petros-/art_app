@@ -51,10 +51,14 @@
         item_wrapper_class: 'inline' %>
       </div>
     </div>
-  
-    <div class="col-md-4">
-      <%= f.input :notes %>
+    
+    <div class="col-md-3">
+      <%= f.button :submit, class: "btn btn-primary" %>
     </div>
+
+  </div>
+
+  <div class="row">
 
     <div class="col-md-4">
       <%= f.input :tag_list, hint: 'Tags (separated by commas)' %>
@@ -63,10 +67,15 @@
     <div class="col-md-4">
       <%= f.input :series_list, hint: 'Series (separated by commas)' %>
     </div>
-   
-    <div class="col-md-3">
-      <%= f.button :submit, class: "btn btn-primary" %>
+
+    <div class="col-md-4">
+      <%= f.input :region, hint: 'e.g. Northwest, Florence' %>
     </div>
+
+    <div class="col-md-4">
+      <%= f.input :notes %>
+    </div>  
+    
   </div>
 
 <% end %>
