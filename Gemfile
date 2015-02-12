@@ -18,12 +18,14 @@ gem 'date_time_precision', '~> 0.8.0'
 gem 'devise'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'mail_form'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development, :test do
      gem 'sqlite3'
      gem 'spring'
+     gem 'foreman'
 end
 
 group :production do

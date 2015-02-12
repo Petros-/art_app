@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get "admin" => "artworks#admin"
 
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources :contacts, only: [:new, :create]
+
   resources :artworks, path: ''
+
+  
 
   # following http://stackoverflow.com/questions/15329041/browser-based-new-user-approval-by-admin-in-rails-3-2-app-using-devise
   #match 'users/:id/approve'=> 'users#approve_user', as: 'approve_user'
