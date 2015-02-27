@@ -18,8 +18,39 @@ $navbar-margin-bottom: -10px;
 $navbar-default-border: 0px;
 $btn-default-color: $brand-primary;
 
-/* Testing for the baseline grid 
-body {background-image: url("Grid.png"); background-repeat: repeat; } */
+// div {border: 1px solid grey !important;}
+
+ // Testing for the baseline grid 
+body {background-image: url("Grid.png"); background-repeat: repeat; } 
+
+.center {text-align:center !important;}
+.nav-center {margin:0; float:none;}
+.navbar-inner{text-align:center;}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.navbar-brand, 
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+
+td {line-height: 100% !important; vertical-align: middle !important; }
+
+.navbar-brand img {text-align:center; margin: 0 auto;}
+#topline {padding-top: 20px !important;}
 
 .btn {padding: 20px 30px !important;}
 h1 {font-weight: 200italic; font-style: italic !important;}
@@ -44,13 +75,18 @@ h1, h3 { margin:4px 0px 16px 0px !important; }
 }
 .tags a:hover {background-color: $brand-primary; text-decoration: none;}
 
+/* Masonry stuff
+-------------------------------------------------- */
+#fit-width .masonry {
+  margin: 0 auto !important;
+}
+
 /* Mailer style
 -------------------------------------------------- */
 .hidden { display: none; }
 
 /* Sticky footer styles
 -------------------------------------------------- */
-
 html,
 body {
   height: 100%;

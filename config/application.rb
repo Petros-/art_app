@@ -8,6 +8,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 
+
 module ArtApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -23,6 +24,10 @@ module ArtApp
     # config.i18n.default_locale = :de
 
     config.assets.initialize_on_precompile = false
+
+    # this is for setting up custom error pages that use global site styles
+    # not sure if I put it in the right place
+    # config.exceptions_app = self.routes
 
   end
 end

@@ -76,6 +76,13 @@
 		<h3><%= @artwork.category %></h3>
 	</div>
 
+	<% unless @artwork.region.blank? %>	
+		<div class="col-xs-6 col-sm-3 col-md-2">
+			<p class="field-label">Region</p>
+			<h3><%= @artwork.region %></h3>
+		</div>
+	<% end %>
+	
 	<% unless @artwork.tags.blank? %>
 	  <div class="col-xs-6 col-sm-6 col-md-4">
 	    <p class="field-label">Tags</p>
@@ -87,18 +94,7 @@
 	  </div>
 	<% end %>
 
-	<% unless @artwork.region.blank? %>	
-		<div class="col-xs-6 col-sm-3 col-md-2">
-			<p class="field-label">Region</p>
-			<h3><%= @artwork.region %></h3>
-		</div>
-	<% end %>
+	
 
 </div> <!-- end of second 'row' div -->
 
-<div class="fixed-prev-next">
-	<div class="btn-group" role="group" aria-label="...">
-	  <%= link_to "Previous",  @artwork.previous, :class => "btn btn-default" if @artwork.previous.present? %>
-	  <%= link_to "Next", @artwork.next, :class => "btn btn-default" if @artwork.next.present? %>
-	</div>
-</div>

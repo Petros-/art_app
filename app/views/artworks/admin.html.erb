@@ -1,12 +1,12 @@
 <% if current_user.admin? %> 
-  <h2>All Works</h2>
-
+  <h2>All <%= @artworks.count %> Artworks </h2>  
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Image</th>
           <th>Title</th>
+          <th>Series</th>
           <th>Genre</th>
           <th>Category</th>
           <th>Medium</th>
@@ -24,14 +24,17 @@
           <tr>
             <td><%= link_to image_tag(artwork.image.url(:thumb)), artwork %></td>
             <td><%= artwork.title %></td>
+            <td><%= artwork.series_list %></td>
             <td><%= artwork.genre %></td>
             <td><%= artwork.category %></td>
             <td><%= artwork.medium %></td>
             <td><%= artwork.date %></td>
-            <td><%= artwork.height %> x <%= artwork.width %></td>
-            <td><%= artwork.availability %> </td>
-            <td><%= artwork.rating %> </td>
-            <td><%= artwork.tag_list %> </td>
+            <td><% if artwork.height.present? %>
+              <%= artwork.height %> x <%= artwork.width %>
+            <% end %></td>
+            <td><%= artwork.availability %></td>
+            <td><%= artwork.rating %></td>
+            <td><%= artwork.tag_list %></td>
             <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
             <td></td>
           </tr>

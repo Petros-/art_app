@@ -20,7 +20,7 @@ class Artwork < ActiveRecord::Base
   end
 
   def previous
-    Artwork.where(["id < ?", id]).order('id').last
+    Artwork.where(["id < ?", id]).order('rating DESC').last
   end
 
   def next

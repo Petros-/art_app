@@ -5,27 +5,24 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.json
   def index
-    if params[:tag]
-      @artworks = Artwork.tagged_with(params[:tag])
+    if params[:tag] or params[:series]
+      @artworks = Artwork.tagged_with(params[:tag])  or
+      @artworks = Artwork.tagged_with(params[:series])
     else
       @artworks = Artwork.all
     end
   end
 
   def tagged
-    if params[:tag].present? 
       @artworks = Artwork.tagged_with(params[:tag])
-    else 
-      @artworks = Artwork.all
-    end  
   end
 
   def series
-    if params[:series].present? 
+    # if params[:series]
       @artworks = Artwork.tagged_with(params[:series])
-    else 
-      @artworks = Artwork.all
-    end  
+    # else 
+    #   @artworks = Artwork.all
+    # end  
   end
 
   def admin
@@ -36,9 +33,9 @@ class ArtworksController < ApplicationController
   # GET /artworks/1.json
   def show
     @artwork = Artwork.friendly.find(params[:id])
-    if request.path != artwork_path(@artwork)
-      redirect_to @artwork, status: :moved_permanently
-    end
+    # if request.path != artwork_path(@artwork)
+    #   redirect_to @artwork, status: :moved_permanently
+    # end
   end
 
   # GET /artworks/new

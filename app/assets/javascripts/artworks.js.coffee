@@ -7,3 +7,8 @@ $ ->
     $('#artworks').masonry
       itemSelector: '.box'
       isFitWidth: true
+
+# container = document.querySelector('#container')
+# msnry = new Masonry(container,
+#   itemSelector: '.item'
+#   columnWidth: 200)

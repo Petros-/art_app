@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
   resources :artworks, path: ''
 
-  
+  get "/404", :to => "errors#not_found"
+  get "/422", :to => "errors#unacceptable"
+  get "/500", :to => "errors#internal_error"
+ 
 
   # following http://stackoverflow.com/questions/15329041/browser-based-new-user-approval-by-admin-in-rails-3-2-app-using-devise
   #match 'users/:id/approve'=> 'users#approve_user', as: 'approve_user'
