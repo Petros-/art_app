@@ -5,8 +5,9 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.json
   def index
-    if params[:tag] or params[:series]
-      @artworks = Artwork.tagged_with(params[:tag])  or
+    if params[:tag] 
+      @artworks = Artwork.tagged_with(params[:tag])
+    elsif params[:series]
       @artworks = Artwork.tagged_with(params[:series])
     else
       @artworks = Artwork.all
@@ -18,11 +19,7 @@ class ArtworksController < ApplicationController
   end
 
   def series
-    # if params[:series]
-      @artworks = Artwork.tagged_with(params[:series])
-    # else 
-    #   @artworks = Artwork.all
-    # end  
+      @artworks = Artwork.tagged_with(params[:series]) 
   end
 
   def admin

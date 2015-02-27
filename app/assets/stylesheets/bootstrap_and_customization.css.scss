@@ -21,7 +21,7 @@ $btn-default-color: $brand-primary;
 // div {border: 1px solid grey !important;}
 
  // Testing for the baseline grid 
-body {background-image: url("Grid.png"); background-repeat: repeat; } 
+// body {background-image: url("Grid.png"); background-repeat: repeat; } 
 
 .center {text-align:center !important;}
 .nav-center {margin:0; float:none;}
@@ -48,6 +48,7 @@ body {background-image: url("Grid.png"); background-repeat: repeat; }
 }
 
 td {line-height: 100% !important; vertical-align: middle !important; }
+.btn {margin-bottom:16px !important;}
 
 .navbar-brand img {text-align:center; margin: 0 auto;}
 #topline {padding-top: 20px !important;}
