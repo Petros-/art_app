@@ -1,13 +1,21 @@
 <nav class="navbar navbar-default" role="navigation">
   <div id="topline" class="row row-centered" >
     <div class="col-sm-4 col-centered">
-      
+      <% if @artwork.present?  %>
+        <% if @artwork.previous.present? %>
+          <%= link_to "&larr; Previous".html_safe, @artwork.previous %>
+        <% end %>
+      <% end %>
     </div>     
     <div class="col-sm-4 col-centered">     
       <%= link_to image_tag("PeterBentley_mark.png"), root_path %>
     </div>
     <div class="col-sm-4 col-centered">
-      
+      <% if @artwork.present?  %>
+        <% if @artwork.next.present?  %>
+          <%= link_to "Next &rarr;".html_safe, @artwork.next %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </nav>

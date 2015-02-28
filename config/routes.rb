@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'tagged' => 'artworks#index', :as => 'tagged'
   get 'series' => 'artworks#index', :as => 'series'
+  get 'sold' => 'artworks#sold'
 
   devise_for :users, :skip => :registrations
 

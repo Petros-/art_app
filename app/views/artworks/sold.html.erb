@@ -1,0 +1,7 @@
+<div id="artworks" class="transitions-enabled">
+	  <% @artworks.sold.each do |artwork| %>
+	    <div class="box">
+        <%= link_to image_tag(artwork.image.url(:medium)), artwork %>
+	    </div>
+	  <% end %>
+</div>
