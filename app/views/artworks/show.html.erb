@@ -12,45 +12,38 @@
 
 
 <div class="row">
-	<div class="col-mid-12">
-		<div class="row">
-			<div class="col-md-8">
-		  	<%= image_tag(@artwork.image.url, :class => 'img-responsive') %>
-		  </div>
+	<div class="col-md-8">
+  	<%= image_tag(@artwork.image.url, :class => 'img-responsive') %>
+  </div>
 
-		  <div class="col-xs-12 col-md-4">
+	<div class="col-md-4">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12">
 		  	<p class="field-label">Title</p>
 		  	<h1><%= @artwork.title %></h1>
 		  </div>
 
-		  <div class="col-xs-12 col-md-2">
-			  
-			</div>
-			<div class="col-xs-12 col-md-2">
-				
-			</div>
-
-		  <div class="col-xs-6 col-sm-3 col-md-4">
+		  <div class="col-xs-6 col-sm-12">
 		  	<p class="field-label">Medium</p>
 		  	<h3><%= @artwork.medium %></h3>
 		  </div>
 
 		  <% unless @artwork.date.blank? %>	
-				<div class="col-xs-6 col-sm-3 col-md-2">
+				<div class="col-xs-6 col-sm-6">
 					<p class="field-label">Date</p>
 					<h3><%= @artwork.date.strftime("%b %d %Y") %></h3>
 				</div>
 			<% end %>
 
 			<% unless @artwork.height.blank? | @artwork.width.blank?%>	
-				<div class="col-xs-6 col-sm-3 col-md-2">
+				<div class="col-xs-6 col-sm-6">
 					<p class="field-label">Size</p>
 					<h3><%= @artwork.height %> x <%= @artwork.width %> in.</h3>
 				</div>
 			<% end %>
 
 			<% unless @artwork.series.blank? %>
-			  <div class="col-xs-6 col-sm-6 col-md-4">
+			  <div class="col-xs-6 col-sm-12">
 			    <p class="field-label">Series</p>
 			    <% @artwork.series.each do |series| %>
 			      <span class="tags">
@@ -61,7 +54,7 @@
 			<% end %>
 
 			<% unless @artwork.availability.blank? %>	
-				<div class="col-xs-12 col-sm-3 col-md-4">
+				<div class="col-xs-12 col-sm-12">
 					<% if @artwork.availability == 'Available for purchase' %>
 						<p class="field-label">Availability</p>
 						<h3><%= @artwork.availability %></h3>
@@ -73,24 +66,24 @@
 				</div>
 			<% end %>
 
-			<div class="col-xs-6 col-sm-3 col-md-2">
+			<div class="col-xs-6 col-sm-6">
 				<p class="field-label">Genre</p>
 				<h3><%= @artwork.genre %></h3>
 			</div>
-			<div class="col-xs-6 col-sm-3 col-md-2">
+			<div class="col-xs-6 col-sm-6">
 				<p class="field-label">Category</p>
 				<h3><%= @artwork.category %></h3>
 			</div>
 
 			<% unless @artwork.region.blank? %>	
-				<div class="col-xs-6 col-sm-3 col-md-2">
+				<div class="col-xs-6 col-sm-6">
 					<p class="field-label">Region</p>
 					<h3><%= @artwork.region %></h3>
 				</div>
 			<% end %>
 
 			<% unless @artwork.tags.blank? %>
-			  <div class="col-xs-6 col-sm-6 col-md-4">
+			  <div class="col-xs-6 col-sm-12">
 			    <p class="field-label">Tags</p>
 			    <% @artwork.tags.each do |tag| %>
 			      <span class="tags">
@@ -99,8 +92,7 @@
 			    <% end %>
 			  </div>
 			<% end %>
-
 		</div>
-	</div> <!-- end of full-wide column -->
+	</div>
 </div> <!-- end of 'row' div -->
 
