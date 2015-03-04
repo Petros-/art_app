@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'inkwash' => 'artworks#inkwash', :as => 'inkwash'
   get 'charcoal' => 'artworks#charcoal', :as => 'charcoal'
   get 'graphite' => 'artworks#graphite', :as => 'graphite'
+  get 'paintings' => 'artworks#paintings', :as => 'paintings'
+  get 'drawings' => 'artworks#drawings', :as => 'drawings'
+  get 'sculpture' => 'artworks#sculpture', :as => 'sculpture'
 
   devise_for :users, :skip => :registrations
 

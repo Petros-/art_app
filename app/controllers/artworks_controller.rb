@@ -51,6 +51,11 @@ class ArtworksController < ApplicationController
     render :index
   end
 
+  def interior
+    @artworks = Artwork.where(genre: 'Interior')
+    render :index
+  end
+
   def oil
     @artworks = Artwork.where(medium: ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Oil pastel'])
     render :index
@@ -73,6 +78,21 @@ class ArtworksController < ApplicationController
 
   def graphite
     @artworks = Artwork.where(medium: 'Graphite')
+    render :index
+  end
+
+  def paintings
+    @artworks = Artwork.where(category: 'Painting')
+    render :index
+  end
+
+  def drawings
+    @artworks = Artwork.where(category: 'Drawing')
+    render :index
+  end
+
+  def sculpture
+    @artworks = Artwork.where(category: 'Sculpture')
     render :index
   end
 
