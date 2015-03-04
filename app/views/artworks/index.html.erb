@@ -1,8 +1,46 @@
 <h1 class="center">Original Drawings &amp; Paintings from Life</h1>
-<div id="artworks" class="transitions-enabled">
-	  <% @artworks.each do |artwork| %>
-	    <div class="box">
-        <%= link_to image_tag(artwork.image.url(:medium)), artwork %>
-	    </div>
-	  <% end %>
-</div>
+<div class="row">
+	<div class="col-sm-2">
+		<ul class="list-unstyled">
+			<li><%= link_to "All Works", root_path %></li>
+		</ul>
+
+		<p class="field-label">Availability</p>
+		<ul class="list-unstyled">
+			<li><%= link_to "Sold", sold_path %></li>
+			<li><%= link_to "Unsold", unsold_path %></li>
+		</ul>
+		<p class="field-label">Genre</p>
+		<ul class="list-unstyled">
+			<li><%= link_to "Landscape", landscape_path %></li>
+			<li><%= link_to "Still life", stilllife_path %></li>
+			<li><%= link_to "Figure", figure_path %></li>
+			<li><%= link_to "Interior", interior_path %></li>
+		</ul>
+
+		<p class="field-label">Medium</p>
+		<ul class="list-unstyled">
+			<li><%= link_to "Oil", oil_path %></li>
+			<li><%= link_to "Watercolor", watercolor_path %></li>
+			<li><%= link_to "Charcoal", charcoal_path %></li>
+			<li><%= link_to "Ink Wash", inkwash_path %></li>
+			<li><%= link_to "Graphite", graphite_path %></li>
+		</ul>
+
+		<p class="field-label">Series</p>
+		<ul class="list-unstyled">
+			
+		</ul>
+	</div>
+
+	<div class="col-sm-10">
+		<div id="artworks" class="transitions-enabled">
+			  <% @artworks.each do |artwork| %>
+			    <div class="box">
+		        <%= link_to image_tag(artwork.image.url(:medium)), artwork %>
+			    </div>
+			  <% end %>
+		</div>
+	</div>
+
+</div> <!-- end of row div -->

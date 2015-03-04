@@ -2,7 +2,17 @@ Rails.application.routes.draw do
 
   get 'tagged' => 'artworks#index', :as => 'tagged'
   get 'series' => 'artworks#index', :as => 'series'
-  get 'sold' => 'artworks#sold'
+  get 'sold' => 'artworks#sold', :as => 'sold'
+  get 'unsold' => 'artworks#unsold', :as => 'unsold'
+  get 'landscape' => 'artworks#landscape', :as => 'landscape'
+  get 'stilllife' => 'artworks#stilllife', :as => 'stilllife'
+  get 'figure' => 'artworks#figure', :as => 'figure'
+  get 'interior' => 'artworks#interior', :as => 'interior'
+  get 'oil' => 'artworks#oil', :as => 'oil'
+  get 'watercolor' => 'artworks#watercolor', :as => 'watercolor'
+  get 'inkwash' => 'artworks#inkwash', :as => 'inkwash'
+  get 'charcoal' => 'artworks#charcoal', :as => 'charcoal'
+  get 'graphite' => 'artworks#graphite', :as => 'graphite'
 
   devise_for :users, :skip => :registrations
 

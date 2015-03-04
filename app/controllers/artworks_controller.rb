@@ -26,6 +26,56 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.all
   end
 
+  def sold
+    @artworks = Artwork.where(availability: 'Private collection')
+    render :index
+  end
+
+  def unsold
+    @artworks = Artwork.where(availability: 'Available for purchase')
+    render :index
+  end
+
+  def landscape
+    @artworks = Artwork.where(genre: 'Landscape')
+    render :index
+  end
+
+  def stilllife
+    @artworks = Artwork.where(genre: 'Still life')
+    render :index
+  end
+
+  def figure
+    @artworks = Artwork.where(genre: 'Figure')
+    render :index
+  end
+
+  def oil
+    @artworks = Artwork.where(medium: ['Oil on paper', 'Oil on canvas', 'Oil on canvas mounted on panel', 'Oil pastel'])
+    render :index
+  end
+
+  def watercolor
+    @artworks = Artwork.where(medium: 'Watercolor')
+    render :index
+  end
+
+  def inkwash
+    @artworks = Artwork.where(medium: 'Ink wash')
+    render :index
+  end
+
+  def charcoal
+    @artworks = Artwork.where(medium: 'Charcoal')
+    render :index
+  end
+
+  def graphite
+    @artworks = Artwork.where(medium: 'Graphite')
+    render :index
+  end
+
   # GET /artworks/1
   # GET /artworks/1.json
   def show
